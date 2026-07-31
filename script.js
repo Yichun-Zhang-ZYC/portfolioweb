@@ -17,24 +17,6 @@ const projects = [
     tags: ["NLP", "BERTopic", "Sentiment Analysis"],
     url: "https://yichun-zhang-zyc.github.io/ai-news-sentiment-pipeline/",
   },
-  {
-    title: "Project Three",
-    label: "Research + Product",
-    status: "Case study",
-    description:
-      "A slot for work that mixes product thinking, research synthesis, or something more strategic than purely technical shipping.",
-    tags: ["Product", "Research", "System"],
-    url: "https://github.com/",
-  },
-  {
-    title: "Project Four",
-    label: "Future drop",
-    status: "Coming next",
-    description:
-      "Reserved for the next strong addition so the site already feels alive before every project has been fully documented.",
-    tags: ["Next", "Archive", "Update"],
-    url: "https://github.com/",
-  },
 ];
 
 const track = document.querySelector("#projects-track");
@@ -59,8 +41,14 @@ function renderProjects() {
       tagList.appendChild(item);
     });
 
-    const link = card.querySelector(".project-card__link");
-    link.href = project.url;
+    const displayUrl = project.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+    const chrome = card.querySelector(".embed-chrome");
+    chrome.href = project.url;
+    card.querySelector(".embed-url").textContent = displayUrl;
+
+    const iframe = card.querySelector(".embed-iframe");
+    iframe.src = project.url;
+    iframe.title = `${project.title} live preview`;
 
     track.appendChild(card);
   });

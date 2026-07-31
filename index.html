@@ -66,11 +66,24 @@
           <h3 class="project-card__title"></h3>
           <p class="project-card__description"></p>
         </div>
+        <div class="project-card__embed">
+          <a class="embed-chrome" href="#" target="_blank" rel="noreferrer">
+            <span class="embed-dot"></span>
+            <span class="embed-dot"></span>
+            <span class="embed-dot"></span>
+            <span class="embed-url"></span>
+            <span class="embed-expand" aria-hidden="true">↗</span>
+          </a>
+          <div class="embed-frame">
+            <iframe
+              class="embed-iframe"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+            ></iframe>
+          </div>
+        </div>
         <div class="project-card__footer">
           <ul class="tag-list"></ul>
-          <a class="project-card__link" href="#" target="_blank" rel="noreferrer">
-            Open
-          </a>
         </div>
       </article>
     </template>
