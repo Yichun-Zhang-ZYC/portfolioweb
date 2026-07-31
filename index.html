@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kely Zhang Portfolio</title>
+    <meta
+      name="description"
+      content="A monochrome, motion-led portfolio framework for Kely Zhang."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="hero" id="top">
+      <div class="hero__rails" aria-hidden="true">
+        <span class="hero__rail hero__rail--left"></span>
+        <span class="hero__rail hero__rail--right"></span>
+      </div>
+
+      <div class="hero__content">
+        <h1 class="hero__title">
+          This is
+          <span class="name-wrap">
+            <button class="name-trigger" type="button" data-scroll-target="projects">
+              Kely Zhang
+            </button>
+            <span class="hero__hint hero__hint--top-right" aria-hidden="true">
+              <span class="arrow">↙</span>
+              <span>enter</span>
+            </span>
+          </span>
+        </h1>
+      </div>
+
+      <div class="hero__footer">
+        <p>Portfolio framework for kelyzhang.com / github.io</p>
+        <button class="ghost-link" type="button" data-scroll-target="projects">
+          See projects
+        </button>
+      </div>
+    </header>
+
+    <main id="projects" class="projects-shell">
+      <section class="projects-track" aria-label="Projects pages">
+        <div class="projects-track__inner" id="projects-track"></div>
+      </section>
+    </main>
+
+    <template id="project-card-template">
+      <article class="project-card">
+        <div class="project-card__meta">
+          <span class="project-card__index"></span>
+          <span class="project-card__status"></span>
+        </div>
+        <div class="project-card__body">
+          <p class="project-card__label"></p>
+          <h3 class="project-card__title"></h3>
+          <p class="project-card__description"></p>
+        </div>
+        <div class="project-card__footer">
+          <ul class="tag-list"></ul>
+          <a class="project-card__link" href="#" target="_blank" rel="noreferrer">
+            Open
+          </a>
+        </div>
+      </article>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
