@@ -1,21 +1,21 @@
 const projects = [
   {
-    title: "Project One",
-    label: "Featured build",
-    status: "Live concept",
+    title: "Plant Disease Classifier",
+    label: "Computer Vision",
+    status: "Live demo",
     description:
-      "A first highlighted project slot for one of your strongest works. This copy is intentionally easy to replace once we pull from GitHub and Drive.",
-    tags: ["UI/UX", "Storytelling", "Build"],
-    url: "https://github.com/",
+      "A SqueezeNet 1.1 model fine-tuned on the PlantVillage dataset to classify 38 plant disease and healthy-leaf categories across 14 species — 98.13% weighted test accuracy, running entirely client-side in the browser via ONNX Runtime Web.",
+    tags: ["Computer Vision", "ONNX Runtime", "PyTorch"],
+    url: "https://yichun-zhang-zyc.github.io/plant-disease-classifier/",
   },
   {
-    title: "Project Two",
-    label: "Experimental",
-    status: "In progress",
+    title: "AI in the News",
+    label: "NLP Pipeline",
+    status: "Live demo",
     description:
-      "A space for a more playful or vibe-coded experiment. This layout is made for projects that are visual, interactive, or still evolving.",
-    tags: ["Motion", "Prototype", "Web"],
-    url: "https://github.com/",
+      "An end-to-end NLP pipeline that turns ~200K news articles into a structured view of how media covers AI's impact on business — topic modeling, entity extraction, and sentiment scoring, surfaced in an interactive dashboard.",
+    tags: ["NLP", "BERTopic", "Sentiment Analysis"],
+    url: "https://yichun-zhang-zyc.github.io/ai-news-sentiment-pipeline/",
   },
   {
     title: "Project Three",
