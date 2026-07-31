@@ -11,6 +11,12 @@ const projects = [
       "An end-to-end NLP pipeline that turns ~200K news articles into a structured view of how media covers AI's impact on business — topic modeling, entity extraction, and sentiment scoring, surfaced in an interactive dashboard.",
     url: "https://yichun-zhang-zyc.github.io/ai-news-sentiment-pipeline/",
   },
+  {
+    title: "Room to Grow",
+    description:
+      "A minimalist personal growth app where completing real-life todos earns coins to build and decorate a room you actually care about — habit streaks, a local-first room economy, no dense dashboards.",
+    url: "https://yichun-zhang-zyc.github.io/room-to-grow/",
+  },
 ];
 
 const track = document.querySelector("#projects-track");
