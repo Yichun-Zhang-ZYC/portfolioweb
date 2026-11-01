@@ -40,20 +40,6 @@ const PROJECTS = [
     icon: "news",
   },
   {
-    id: "course-advisor",
-    title: "AI Course Advisor",
-    short: "An AI assistant that helps UChicago students pick courses",
-    desc:
-      "A conversational course advisor for University of Chicago students: ask about interests, requirements or workload and get course suggestions grounded in the course catalog.",
-    highlights: ["LLM-powered recommendations", "Built for UChicago students"],
-    tags: ["LLM", "RAG", "Web"],
-    group: "ai",
-    featured: true,
-    live: `${PAGES}/course_advisor_simple/`,
-    repo: `${GITHUB}/course_advisor_simple_version`,
-    icon: "cap",
-  },
-  {
     id: "nl2sql",
     title: "NLP-to-SQL Chatbot",
     short: "Ask a database questions in plain English",
@@ -66,19 +52,6 @@ const PROJECTS = [
     live: `${PAGES}/chatbot_db11/`,
     repo: `${GITHUB}/chatbot_db11`,
     icon: "chat",
-  },
-  {
-    id: "street",
-    title: "Street-Level Imagery Metrics",
-    short: "Estimating real-world sizes of objects from street photos",
-    desc:
-      "Estimates the real-world dimensions of physical features (signs, poles, sidewalks and more) from street-level imagery, combining Mapillary images with 3D reconstruction.",
-    highlights: ["Mapillary street-level imagery", "3D reconstruction", "Metric estimation"],
-    tags: ["Computer vision", "3D", "Geospatial"],
-    group: "ai",
-    featured: true,
-    repo: `${GITHUB}/Real-World-Dimension-and-Metric-Estimation-of-Physical-Features-from-Street-Level-Imagery-`,
-    icon: "street",
   },
   {
     id: "sentiment-tool",
@@ -288,25 +261,63 @@ const RESEARCH = [
 
 const ABOUT = {
   intro:
-    "I'm Kely, a data scientist and ML engineer. I like taking a model all the way from notebook to something people can click on, and I came to data through economics and statistics, so I care as much about why a number moves as about predicting it.",
+    "I'm Kely, a data scientist and ML engineer based in Chicago. I came to data through statistics and economics, so I care as much about why a number moves as about predicting it, and I like taking a model all the way from notebook to something people can click on.",
+  status: "Finishing my Master of Applied Data Science at UChicago (Dec 2026). Open to data science, ML and AI engineering roles, and open to relocate.",
   timeline: [
-    { when: "Undergrad", where: "University of Toronto", what: "Statistics, economics and computer science. Regression, inference and econometrics papers." },
-    { when: "Graduate", where: "University of Chicago", what: "Machine learning, NLP and MLOps. Building and shipping ML products." },
-    { when: "Now", where: "Looking for my next role", what: "Data science, ML engineering and applied AI." },
+    {
+      when: "Jun 2026 – now",
+      where: "The OCC (Options Clearing Corporation)",
+      role: "Software Engineering Intern, Automation Developer",
+      what: "Built a rule-based system that replaced manual Jira artifact-publishing approvals, uncovered years of undetected End-of-Life library usage with automated alerting, and traced recurring Kubernetes config drift across clusters with a live dashboard for leadership.",
+    },
+    {
+      when: "Nov 2025 – Jun 2026",
+      where: "University of Chicago IT Services",
+      role: "AI Developer",
+      what: "Built an Oracle Digital Assistant chatbot for the purchase requisition workflow, with a custom account validation API that helps staff find the right expense account.",
+    },
+    {
+      when: "Sep 2025 – Dec 2026",
+      where: "University of Chicago",
+      role: "Master of Applied Data Science",
+      what: "Big Data and Cloud Engineering, Next-Generation NLP, MLOps, Time Series Analysis, Machine Learning.",
+    },
+    {
+      when: "Jul – Sep 2025",
+      where: "The Home Depot · Shanghai",
+      role: "Data Scientist Intern, Agentic AI",
+      what: "Built an NL-to-SQL chatbot on Google BigQuery so teams could ask data questions instead of checking dashboards, and fixed a long-broken Jotform → Apps Script → BigQuery → Power BI pipeline.",
+    },
+    {
+      when: "Mar – May 2025",
+      where: "Under Armour · Shanghai",
+      role: "Data Analyst Intern",
+      what: "Daily SQL data pulls, post-launch campaign analysis, and VADER sentiment analysis of social listening data.",
+    },
+    {
+      when: "Sep 2019 – Jun 2023",
+      where: "University of Toronto",
+      role: "Statistics major, Math minor, Economics with Data Analytics focus",
+      what: "Graduated with High Distinction. Dean's List all four years.",
+    },
   ],
-  skills: ["Python", "PyTorch", "Transformers", "SQL", "R", "Stata", "MLflow", "FastAPI", "Docker", "Kubernetes", "GitHub Actions", "JavaScript"],
+  skills: [
+    "Python", "SQL", "R", "JavaScript", "PyTorch", "Hugging Face", "TensorFlow", "MLflow", "FastAPI",
+    "Docker", "Kubernetes", "GitHub Actions", "Jenkins", "AWS", "GCP", "Azure", "Power BI", "Tableau",
+  ],
 };
 
-// Empty values are hidden on the site. Fill in email and LinkedIn when ready.
+// Empty values are hidden on the site.
 const CONTACT = [
+  { label: "Email", value: "kelyzhang0zyc0@gmail.com", url: "mailto:kelyzhang0zyc0@gmail.com" },
+  { label: "LinkedIn", value: "yichun-zhang-zyc", url: "https://www.linkedin.com/in/yichun-zhang-zyc/" },
   { label: "GitHub", value: "yichun-zhang-zyc", url: GITHUB },
-  { label: "Email", value: "", url: "" },
-  { label: "LinkedIn", value: "", url: "" },
   { label: "Resume", value: "", url: "" },
 ];
 
 const NOW = [
+  "Interning at The OCC in Chicago, automating release approvals and hunting down End-of-Life dependencies.",
+  "Finishing my Master of Applied Data Science at UChicago, graduating December 2026.",
   "Building DS Prep, an interview-prep site for my study group with SQL, stats, ML and LLM exercises that run in the browser.",
-  "Writing learning notes on CI/CD artifact scanning and upload automation (Jenkins, Jira, Artifactory).",
-  "Redesigning this room, one object at a time.",
+  "Looking for full-time data science, ML and AI engineering roles. Open to relocate.",
 ];

@@ -292,6 +292,7 @@ function aboutView() {
     render() {
       return el("div", {}, [
         el("p", { class: "about__intro", text: ABOUT.intro }),
+        el("p", { class: "about__status" }, [el("span", { class: "pulse", "aria-hidden": "true" }), ABOUT.status]),
         el("p", { class: "section-label", text: "So far" }),
         el(
           "ol",
@@ -300,6 +301,7 @@ function aboutView() {
             el("li", {}, [
               el("div", { class: "timeline__when", text: t.when }),
               el("p", { class: "timeline__where", text: t.where }),
+              t.role ? el("p", { class: "timeline__role", text: t.role }) : null,
               el("p", { class: "timeline__what", text: t.what }),
             ])
           )
