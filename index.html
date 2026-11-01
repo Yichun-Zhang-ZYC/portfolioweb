@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kely Zhang Portfolio</title>
+    <title>Kely Zhang · Portfolio</title>
     <meta
       name="description"
-      content="A monochrome, motion-led portfolio framework for Kely Zhang."
+      content="Kely Zhang, data scientist and ML engineer. Click around the room to explore projects, research, and more."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,79 +15,163 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (function () {
+        let theme = null;
+        try { theme = localStorage.getItem("theme"); } catch (e) {}
+        if (!theme) theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
-    <div class="cursor-glow" aria-hidden="true"></div>
-
-    <header class="hero" id="top">
-      <div class="hero__rails" aria-hidden="true">
-        <span class="hero__rail hero__rail--left"></span>
-        <span class="hero__rail hero__rail--right"></span>
-      </div>
-
-      <div class="hero__content">
-        <h1 class="hero__title">
-          This is
-          <span class="name-wrap">
-            <button class="name-trigger" type="button" data-scroll-target="projects">
-              Kely Zhang
-            </button>
-            <span class="hero__hint hero__hint--top-right" aria-hidden="true">
-              <span class="arrow">↙</span>
-              <span>enter</span>
-            </span>
-          </span>
-        </h1>
-      </div>
-
-      <div class="hero__footer">
-        <p>Portfolio framework for kelyzhang.com / github.io</p>
-        <button class="ghost-link" type="button" data-scroll-target="projects">
-          See projects
+    <header class="topbar">
+      <a class="brand" href="#top">Kely Zhang</a>
+      <nav class="topnav" aria-label="Sections">
+        <button type="button" data-open="projects">Projects</button>
+        <button type="button" data-open="research">Research</button>
+        <button type="button" data-open="about">About</button>
+        <button type="button" data-open="contact">Contact</button>
+        <button type="button" class="theme-btn" data-action="theme" aria-label="Toggle dark mode">
+          <span class="theme-btn__dot" aria-hidden="true"></span>
         </button>
-      </div>
+      </nav>
     </header>
 
-    <main id="projects" class="projects-shell">
-      <section class="projects-track" id="projects-scroll" aria-label="Projects pages">
-        <div class="projects-track__inner" id="projects-track"></div>
+    <main id="top">
+      <section class="intro">
+        <h1 class="intro__title">This is <em>Kely Zhang</em>.</h1>
+        <p class="intro__sub">Data scientist and ML engineer. Welcome to my room.</p>
+        <p class="intro__hint"><span class="pulse" aria-hidden="true"></span>Click any labeled object to look inside</p>
       </section>
 
-      <div class="projects-foot">
-        <div class="progress-rail" id="progress-rail">
-          <div class="progress-rail__fill" id="progress-fill"></div>
-          <button class="progress-rail__dot" id="progress-dot" type="button" aria-label="Drag to browse projects"></button>
+      <section class="room" aria-label="Interactive room. Each labeled object opens a section.">
+        <div class="room__stage" id="room-stage">
+          <svg class="room__svg" viewBox="0 0 1200 700" aria-hidden="true" focusable="false">
+            <rect class="f-wall" width="1200" height="560" />
+            <rect class="f-floor" y="560" width="1200" height="140" />
+            <rect class="f-base" y="552" width="1200" height="10" />
+            <ellipse class="f-rug" cx="640" cy="638" rx="340" ry="36" />
+
+            <g class="hot" data-hot="about">
+              <rect class="f-frame" x="478" y="68" width="244" height="214" rx="6" />
+              <rect class="f-sky" x="490" y="80" width="220" height="190" />
+              <circle class="f-sun" cx="664" cy="128" r="20" />
+              <circle class="f-moon-cut" cx="674" cy="120" r="17" />
+              <path class="f-city" d="M490 270V226h22v-18h18v30h16v-44h20v60h14v-36h24v-22h16v58h18v-40h22v24h20v-50h18v68h12v40z" />
+              <g class="f-stars">
+                <circle cx="520" cy="110" r="2" /><circle cx="560" cy="140" r="1.5" /><circle cx="610" cy="100" r="2" /><circle cx="700" cy="170" r="1.5" />
+              </g>
+              <rect class="f-frame" x="596" y="80" width="8" height="190" />
+              <rect class="f-frame" x="490" y="172" width="220" height="8" />
+              <rect class="f-frame" x="466" y="280" width="268" height="12" rx="3" />
+            </g>
+
+            <g class="hot" data-hot="research">
+              <rect class="f-wood" x="70" y="150" width="260" height="410" rx="5" />
+              <rect class="f-wood-dark" x="84" y="164" width="232" height="382" />
+              <rect class="f-wood" x="84" y="286" width="232" height="10" />
+              <rect class="f-wood" x="84" y="416" width="232" height="10" />
+              <g id="room-books"></g>
+            </g>
+
+            <g class="hot" data-hot="contact">
+              <rect class="f-cork" x="860" y="108" width="236" height="184" rx="6" />
+              <rect class="f-cork-in" x="872" y="120" width="212" height="160" rx="3" />
+              <g transform="rotate(-5 920 170)">
+                <rect class="f-note1" x="888" y="138" width="64" height="64" rx="2" />
+                <rect class="f-note-line" x="898" y="160" width="40" height="3" /><rect class="f-note-line" x="898" y="172" width="30" height="3" />
+              </g>
+              <g transform="rotate(4 1010 160)">
+                <rect class="f-note2" x="976" y="130" width="64" height="64" rx="2" />
+                <rect class="f-note-line" x="986" y="152" width="40" height="3" /><rect class="f-note-line" x="986" y="164" width="44" height="3" />
+              </g>
+              <g transform="rotate(-2 960 240)">
+                <rect class="f-note3" x="930" y="208" width="64" height="58" rx="2" />
+                <rect class="f-note-line" x="940" y="228" width="40" height="3" />
+              </g>
+              <g transform="rotate(6 1050 240)">
+                <rect class="f-note1" x="1020" y="212" width="54" height="52" rx="2" />
+              </g>
+              <circle class="f-pin" cx="918" cy="142" r="5" /><circle class="f-pin" cx="1008" cy="134" r="5" />
+              <circle class="f-pin" cx="962" cy="212" r="5" /><circle class="f-pin" cx="1046" cy="216" r="5" />
+            </g>
+
+            <rect class="f-wood" x="380" y="408" width="500" height="18" rx="4" />
+            <rect class="f-wood" x="398" y="426" width="14" height="134" />
+            <rect class="f-wood" x="848" y="426" width="14" height="134" />
+            <rect class="f-wood-dark" x="712" y="426" width="136" height="62" />
+            <rect class="f-wood" x="764" y="452" width="32" height="6" rx="3" />
+
+            <g class="hot" data-hot="projects">
+              <rect class="f-ink" x="616" y="372" width="28" height="36" />
+              <rect class="f-ink" x="582" y="400" width="96" height="10" rx="5" />
+              <rect class="f-ink" x="504" y="246" width="252" height="136" rx="10" />
+              <rect class="f-screen" x="516" y="258" width="228" height="112" rx="4" />
+              <rect class="f-app1" x="532" y="274" width="30" height="30" rx="7" />
+              <rect class="f-app2" x="574" y="274" width="30" height="30" rx="7" />
+              <rect class="f-app3" x="616" y="274" width="30" height="30" rx="7" />
+              <rect class="f-app4" x="658" y="274" width="30" height="30" rx="7" />
+              <rect class="f-app3" x="532" y="320" width="30" height="30" rx="7" />
+              <rect class="f-app1" x="574" y="320" width="30" height="30" rx="7" />
+              <rect class="f-app4" x="616" y="320" width="30" height="30" rx="7" />
+              <rect class="f-cursor" x="702" y="336" width="10" height="16" />
+            </g>
+
+            <g class="hot" data-hot="lamp">
+              <polygon class="f-glow" points="452,330 520,318 600,408 400,408" />
+              <ellipse class="f-ink" cx="432" cy="404" rx="28" ry="7" />
+              <path class="s-ink" d="M432 400 L452 330 L478 300" />
+              <polygon class="f-shade" points="458,296 508,280 522,318 470,330" />
+            </g>
+
+            <g class="hot" data-hot="now">
+              <path class="s-steam" d="M800 360c-8-10 8-16 0-28" />
+              <path class="s-steam s-steam--2" d="M816 362c-8-10 8-16 0-28" />
+              <path class="s-mug" d="M830 380c16 0 16 22 0 22" />
+              <rect class="f-mug" x="788" y="370" width="44" height="40" rx="6" />
+            </g>
+
+            <g class="hot" data-hot="plant">
+              <ellipse class="f-leaf2" cx="1020" cy="420" rx="22" ry="58" transform="rotate(-28 1020 420)" />
+              <ellipse class="f-leaf" cx="1050" cy="398" rx="22" ry="70" />
+              <ellipse class="f-leaf2" cx="1082" cy="420" rx="22" ry="58" transform="rotate(28 1082 420)" />
+              <ellipse class="f-leaf" cx="1004" cy="452" rx="16" ry="40" transform="rotate(-55 1004 452)" />
+              <ellipse class="f-leaf" cx="1098" cy="452" rx="16" ry="40" transform="rotate(55 1098 452)" />
+              <path class="f-pot" d="M992 470h116l-14 92h-88z" />
+              <rect class="f-pot-rim" x="984" y="462" width="132" height="16" rx="4" />
+            </g>
+          </svg>
+
+          <div class="tags" id="room-tags"></div>
         </div>
-        <span class="progress-rail__counter" id="progress-counter"></span>
-      </div>
+      </section>
+
+      <section class="work" id="work" aria-labelledby="work-title">
+        <div class="work__head">
+          <h2 id="work-title">Or just browse everything</h2>
+          <div class="chips" id="work-filters" role="group" aria-label="Filter work"></div>
+        </div>
+        <div class="work__grid" id="work-grid"></div>
+      </section>
     </main>
 
-    <template id="project-card-template">
-      <article class="project-card">
-        <div class="project-card__body">
-          <h3 class="project-card__title"></h3>
-          <p class="project-card__description"></p>
-        </div>
-        <div class="project-card__embed">
-          <a class="embed-chrome" href="#" target="_blank" rel="noreferrer">
-            <span class="embed-dot"></span>
-            <span class="embed-dot"></span>
-            <span class="embed-dot"></span>
-            <span class="embed-url"></span>
-            <span class="embed-expand" aria-hidden="true">↗</span>
-          </a>
-          <div class="embed-frame">
-            <iframe
-              class="embed-iframe"
-              loading="lazy"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-            ></iframe>
-          </div>
-        </div>
-      </article>
-    </template>
+    <footer class="footer">
+      <span>© <span id="year"></span> Kely Zhang</span>
+      <a href="https://github.com/yichun-zhang-zyc" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </footer>
 
+    <dialog class="panel" id="panel" aria-labelledby="panel-title">
+      <div class="panel__chrome">
+        <span class="panel__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button type="button" class="panel__back" id="panel-back" hidden>← Back</button>
+        <h2 class="panel__title" id="panel-title"></h2>
+        <button type="button" class="panel__close" id="panel-close" aria-label="Close">✕</button>
+      </div>
+      <div class="panel__body" id="panel-body"></div>
+    </dialog>
+
+    <script src="./data.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
